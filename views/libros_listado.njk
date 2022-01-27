@@ -1,0 +1,27 @@
+{% extends "base.njk" %}
+
+{% block titulo %}Libros | Listado{% endblock %}
+
+{% block contenido %}
+<h1>Listado de Libros</h1>
+<ul> 
+    {% for libro in libros %} 
+        {% if loop.index % 2 == 0 %} 
+            <li class="par"> 
+        {% else %} 
+            <li class="impar"> 
+        {% endif %} 
+        {{ libro.titulo }} <a class="btn btn-success" href="/libros/{{ libro.id }}">Ver ficha</a>
+        <a class="btn btn-primary" href="/libros/{{ libro.id }}/editar">Editar</a>
+        <form action="/libros/{{ libro.id }}" method="post" class="i-block">
+            <input type="hidden" name="_method" value="delete" />
+            <button type="submit" class="btn btn-danger">
+                Borrar
+            </button>
+        </form>
+        </li>
+    {% else %} 
+        <li>No hay contactos que mostrar.</li> 
+    {% endfor %} 
+</ul>
+{% endblock %}

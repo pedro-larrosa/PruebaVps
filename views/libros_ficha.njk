@@ -1,0 +1,20 @@
+{% extends "base.njk" %}
+
+{% block titulo %}Libros | {{ libro.titulo }}{% endblock %}
+
+{% block contenido %}
+<h1>{{ libro.titulo }}</h1>
+<p><strong>Editorial</strong>: {{ libro.editorial }}</p>
+<p><strong>Precio</strong>: {{ libro.precio }} €</p>
+{% if libro.portada and libro.portada !== ''  %}
+<img class="d-block my-2" src="imagenes/{{ libro.portada }}" alt="Portada de {{ libro.titulo }}" />
+{% endif %}
+<form class="float-end" action="/libros/{{ libro.id }}" method="post">
+            <input type="hidden" name="_method" value="delete" />
+            <button type="submit" class="btn btn-danger mb-3">
+                Borrar
+            </button>
+        </form>
+<a class="btn btn-primary mx-2" href="/libros/{{ libro.id }}/editar">Editar</a>
+<a class="btn btn-success" href="/libros">Volver</a>
+{% endblock %}

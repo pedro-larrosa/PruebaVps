@@ -1,0 +1,27 @@
+.par {
+  color: red;
+}
+
+.impar {
+  color: blueviolet;
+}
+
+li {
+  padding: 10px;
+}
+
+nav {
+  padding: 10px;
+}
+
+nav a {
+  color: white !important;
+}
+
+nav a:hover {
+  color: lightskyblue !important;
+}
+
+.i-block {
+  display: inline-block;
+}

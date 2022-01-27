@@ -1,0 +1,10 @@
+{% extends "base.njk" %}
+
+{% block titulo %}Error{% endblock %}
+
+{% block contenido %}
+    <h1>Error</h1>
+    <div class="alert alert-danger">
+        {{ error }}
+    </div>
+{% endblock %}

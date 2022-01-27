@@ -1,0 +1,31 @@
+{% extends "base.njk" %}
+
+{% block titulo %}Libros | Editar{% endblock %}
+
+{% block contenido %}
+<h1>Editar Libro</h1>
+
+<form action="/libros/{{ libro.id }}" method="post">
+    <input type="hidden" name="_method" value="put" />
+    <div class="form-group mb-3">
+        <label for="titulo"> Título:</label>
+        <input type="text" class="form-control" id="titulo" name="titulo" value="{{ libro.titulo }}"
+                placeholder="Título del libro..." />
+    </div>
+    <div class="form-group mb-3">
+        <label for="editorial"> Editorial:</label>
+        <input type="text" class="form-control" id="editorial" name="editorial" value="{{ libro.editorial }}"
+                placeholder="Editorial del libro..." />
+    </div>
+    <div class="form-group mb-3">
+        <label for="precio"> Precio:</label>
+        <input type="number" class="form-control" id="precio" name="precio" value="{{ libro.precio }}"
+                placeholder="Precio del libro..." />
+    </div>
+    <!--<div class="form-group mb-3">
+        <label for="portada"> Portada:</label>
+        <input type="file" class="form-control" id="portada" name="portada" value="{{ libro.portada }}" />
+    </div>-->
+    <button type="submit" class="btn btn-primary">Editar</button>
+</form>
+{% endblock %}
