@@ -3,7 +3,7 @@ const multer = require('multer');
 //configurar la subida de imagenes
 let storage = multer.diskStorage({
   destination: (req, file, cb) => {
-    cb(null, 'public/imagenes');
+    cb(null, './public/imagenes');
   },
   filename: (req, file, cb) => {
     cb(null, Date.now() + '_' + file.originalname);
