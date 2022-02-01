@@ -18,7 +18,7 @@ const libros = require(__dirname + '/routes/libros');
 const autores = require(__dirname + '/routes/autores'); // Para la parte opcional
 
 // Conectar con BD en Mongo
-mongoose.connect('mongodb://localhost:27017/libros', {
+mongoose.connect('mongodb://vps-0de63f11.vps.ovh.net:27017/libros', {
   useNewURLParser: true,
   useUnifiedTopology: true
 });
